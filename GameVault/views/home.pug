@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1 Welcome to the Game Library
+
+  form(action="/search" method="GET" style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;")
+    input(type="text" name="query" placeholder="Search..." required style="flex: 1; padding: 5px;")
+    select(name="category" required style="padding: 5px;")
+      option(value="games") Games
+      option(value="publishers") Publishers
+      option(value="developers") Developers
+      option(value="genres") Genres
+    button(type="submit" style="padding: 5px 15px; background-color: blue; color: white; border: none; cursor: pointer;") Search
+
+  if results && results.length > 0
+    h2 Search Results
+    table(border="1" style="width: 100%; text-align: left; margin-top: 20px;")
+      thead
+        tr
+          each label in labels
+            th= label
+      tbody
+        each result in results
+          tr
+            each key in Object.keys(result)
+              if key !== 'id'
+                if key === 'Link'
+                  td: a(href=result[key] target="_blank") Visit
+                else
+                  td= result[key]
+  else
+    p No results found.

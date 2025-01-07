@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Update Game
+  form(action="/game/update" method="POST" style="width: 300px; margin: 0 auto;")
+    div(style="margin-bottom: 10px;")
+      label(for="title") Title:
+      input#title(type="text" name="gtitle" value=game.title required style="width: 100%;")
+    div(style="margin-bottom: 10px;")
+      label(for="price") Price:
+      input#price(type="number" step="0.01" name="gprice" value=game.price required style="width: 100%;")
+    div(style="margin-bottom: 10px;")
+      label(for="age_rating") Age Rating:
+      input#age_rating(type="number" name="gamerating" value=game.age_rating required style="width: 100%;")
+    div(style="margin-bottom: 10px;")
+      label(for="link") Link:
+      input#link(type="url" name="glink" value=game.link required style="width: 100%;")
+    input(type="hidden" name="gid" value=game.game_id)
+    div(style="display: flex; gap: 20px; margin-top: 20px;")
+      button(type="submit" style="padding: 10px 20px; border: none; background-color: blue; color: white; cursor: pointer; border-radius: 5px;") Update Game
+      a(href="/game" style="padding: 10px 20px; border: none; background-color: gray; color: white; text-align: center; text-decoration: none; cursor: pointer; border-radius: 5px;") Go Back

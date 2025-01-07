@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Publisher List
+  table(border="1" style="width: 100%; text-align: left;")
+    thead
+      tr
+        th Name
+        th Location
+    tbody
+      each publisher in publishers
+        tr
+          td: a(href=`/publisher/${publisher.publisher_id}`)= publisher.name
+          td= publisher.location

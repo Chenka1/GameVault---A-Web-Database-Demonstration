@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Genre List
+  table(border="1" style="width: 100%; text-align: left;")
+    thead
+      tr
+        th Name
+    tbody
+      each genre in genres
+        tr
+          td= genre.name

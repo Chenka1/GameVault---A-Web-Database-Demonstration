@@ -1,0 +1,22 @@
+{
+  "name": "db-neo",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "md5": "^2.3.0",
+    "package.json": "^2.0.1",
+    "pug": "^3.0.3",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

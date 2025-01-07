@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h2 Create new review
+  form(method='post' action='/review/new' class="was-validated")
+    label(for="user" class="form-label") Select User:
+    select(class="form-select" id="user" name="reviewuser")
+      input(type="text" class="form-control" id="name" placeholder="Enter name" name="dname" required)
+      div(class="valid-feedback") Valid
+      div(class="invalid-feedback") Please fill out this field
+    div(class="mb-3")
+      label(for="location" class="form-label") Location:
+      input(type="text" class="form-control" id="location" placeholder="Enter location" name="dloc")
+    div(class="mb-3")
+      label(for="website" class="form-label") Website:
+      input(type="text" class="form-control" id="website" placeholder="http://" name="dwebsite")
+    button(type="submit" class="btn btn-primary") Add

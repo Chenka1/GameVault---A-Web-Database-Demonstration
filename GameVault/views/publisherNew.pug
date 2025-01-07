@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h2 Add New Publisher
+  form(method='post' action='/publisher/new' class="was-validated")
+    div(class="mb-3 mt-3")
+      label(for="name" class="form-label") Name:
+      input(type="text" class="form-control" id="name" placeholder="Enter name" name="pname" required)
+      div(class="valid-feedback") Valid
+      div(class="invalid-feedback") Please fill out this field
+    div(class="mb-3")
+      label(for="location" class="form-label") Location:
+      input(type="text" class="form-control" id="location" placeholder="Enter location" name="plocation")
+    button(type="submit" class="btn btn-primary") Add

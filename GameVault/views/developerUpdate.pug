@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Update Developer
+  form(action="/developer/update" method="POST" style="width: 300px; margin: 0 auto;")
+    div(style="margin-bottom: 10px;")
+      label(for="name") Name:
+      input#name(type="text" name="dname" value=dev.name required style="width: 100%;")
+    div(style="margin-bottom: 10px;")
+      label(for="location") Location:
+      input#location(type="text" name="dloc" value=dev.location required style="width: 100%;")
+    div(style="margin-bottom: 10px;")
+      label(for="website") Website:
+      input#website(type="url" name="dwebsite" value=dev.website required style="width: 100%;")
+    input(type="hidden" name="did" value=dev.developer_id)
+    button(type="submit" style="margin-top: 10px; padding: 10px 20px; background-color: blue; color: white; border: none; border-radius: 5px; cursor: pointer;") Update Developer

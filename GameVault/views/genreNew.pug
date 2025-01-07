@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 Add New Genre
+  form(action="/genre/new" method="POST" style="width: 300px; margin: 0 auto;")
+    div(style="margin-bottom: 10px;")
+      label(for="name") Name:
+      input#name(type="text" name="gname" required style="width: 100%;")
+    div(style="margin-top: 10px; text-align: center;")
+      button(type="submit" style="padding: 10px 20px; background-color: blue; color: white; border: none; border-radius: 5px; cursor: pointer;") Add Genre

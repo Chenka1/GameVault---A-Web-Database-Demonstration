@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Developer List
+  table(border="1" style="width: 100%; text-align: left;")
+    thead
+      tr
+        th Name
+        th Location
+        th Website
+    tbody
+      each developer in developers
+        tr
+          td: a(href=`/developer/${developer.developer_id}`)= developer.name
+          td= developer.location
+          td: a(href=developer.website target="_blank") Visit Website

@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h2 Sign up to Game Demo
+  form(method='post' action='/auth/register' class="was-validated")
+    div(class="mb-3 mt-3")
+      label(for="uname" class="form-label") Username:
+      input(type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required)
+      div(class="valid-feedback") Valid
+      div(class="invalid-feedback") Please fill out this field
+    div(class="mb-3")
+      label(for="pwd" class="form-label") Password:
+      input(type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required)
+      div(class="valid-feedback") Valid
+      div(class="invalid-feedback") Please fill out this field
+    div(class="mb-3")
+      label(for="email" class="form-label") Email:
+      input(type="email" class="form-control" id="email" placeholder="Enter email" name="email" required)
+      div(class="valid-feedback") Valid
+      div(class="invalid-feedback") Please fill out this field
+    div(class="form-check mb-3")
+      input(class="form-check-input" type="checkbox" id="myCheck"  name="remember" required)
+      label(class="form-check-label" for="myCheck") I agree on agreement
+      div(class="valid-feedback") Valid
+      div(class="invalid-feedback") Check this checkbox to continue
+    button(type="submit" class="btn btn-primary") Register

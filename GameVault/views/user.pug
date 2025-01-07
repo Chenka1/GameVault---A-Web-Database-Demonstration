@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h2 List of users
+  table(class='table table-dark table-hover')
+    thead
+      tr
+        th User ID
+        th Name
+        th email
+    tbody
+      each user in users
+        tr
+          each val, key in user
+            td= val

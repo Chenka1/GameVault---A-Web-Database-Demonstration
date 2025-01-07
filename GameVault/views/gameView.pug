@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Game List
+  table(border="1" style="width: 100%; text-align: left;")
+    thead
+      tr
+        th Title
+        th Price
+        th Age Rating
+        th Link
+    tbody
+      each game in games
+        tr
+          td: a(href=`/game/${game.game_id}`)= game.title
+          td $#{game.price}
+          td= game.age_rating
+          td: a(href=game.link target="_blank") Official Page

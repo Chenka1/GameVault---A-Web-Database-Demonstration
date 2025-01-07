@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Add New Game
+  form(action="/game/new" method="POST" style="width: 300px; margin: 0 auto;")
+    div(style="margin-bottom: 10px;")
+      label(for="title") Title:
+      input#title(type="text" name="gtitle" required style="width: 100%;")
+    div(style="margin-bottom: 10px;")
+      label(for="price") Price:
+      input#price(type="number" step="0.01" name="gprice" required style="width: 100%;")
+    div(style="margin-bottom: 10px;")
+      label(for="age_rating") Age Rating:
+      input#age_rating(type="number" name="gamerating" required style="width: 100%;")
+    div(style="margin-bottom: 10px;")
+      label(for="link") Link:
+      input#link(type="url" name="glink" required style="width: 100%;")
+    button(type="submit" style="margin-top: 10px;") Add Game
